@@ -1,8 +1,8 @@
 package httpcontext
 
 import (
-_    "errors"
-    "net/http"
+	_ "errors"
+	"net/http"
 )
 
 type Request struct {
@@ -21,18 +21,18 @@ func (this *Request) GetAttributes() map[string]string {
 	return this.attributes
 }
 
-func (this *Request) HasAttribute(name string) bool{
-    _, ok := this.attributes[name]
-    return ok
+func (this *Request) HasAttribute(name string) bool {
+	_, ok := this.attributes[name]
+	return ok
 }
 
 func (this *Request) AddAttributes(attributes map[string]string) {
-    for key, value := range attributes{
-        this.attributes[key] = value
-    }
+	for key, value := range attributes {
+		this.attributes[key] = value
+	}
 }
 
 func (this *Request) GetAttribute(name string) (attribute string, ok bool) {
-    attribute, ok = this.attributes[name]
-    return
+	attribute, ok = this.attributes[name]
+	return
 }
